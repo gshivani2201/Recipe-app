@@ -27,7 +27,7 @@ function Search() {
   )
 }
 
-const FormStyle = styled.div`
+const FormStyle = styled.form`
     margin: 0 10rem;
     div {
         width: 100%;
