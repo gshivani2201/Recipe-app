@@ -24,12 +24,12 @@ function App() {
 
 const Logo = styled(Link)`
   text-decoration: none;
-  font-size: 1rem;     //2rem
-  font-weight: 700;    //400    
+  font-size: 1rem;    
+  font-weight: 700;     
   font-family: 'Lobster Two', cursive ;
 `
 const Nav = styled.div`
-  padding: 2rem 0;   //4rem 0;
+  padding: 2rem 0;   
   display: flex;
   justify-content: flex-start;
   align-items: center;

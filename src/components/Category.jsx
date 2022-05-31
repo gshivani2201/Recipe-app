@@ -29,7 +29,7 @@ function Category() {
 const List = styled.div`
     display: flex;
     justify-content: center;
-    margin: 1.5rem 0; //2rem 0;
+    margin: 1.5rem 0; 
 `
 
 const SLink = styled(NavLink)`
@@ -52,7 +52,7 @@ const SLink = styled(NavLink)`
 
     svg {
         color: white;
-        font-size: 1rem;    //1.1rem
+        font-size: 1rem;    
     }
     &.active{
         background: linear-gradient(to right, #f27121, #e94057);
