@@ -20,17 +20,17 @@ function Recipe() {
 
   return (
     <DetailWarpper>
-      <div>
-        <h3>{details.title}</h3>
+      <Box>
+        <h2>{details.title}</h2>
         <img src={details.image} alt={details.title} />
-      </div>
+      </Box>
       <Info>
         <Button className={activeTab === 'instructions' ? 'active' : ''} onClick={() => setActiveTab('instructions')}>Instructions</Button>
         <Button className={activeTab === 'ingredients' ? 'active' : ''} onClick={() => setActiveTab('ingredients')}>Ingredients</Button>
         {activeTab === 'instructions' && (
           <div>
-            <h4 dangerouslySetInnerHTML={{__html: details.summary}}></h4>
-            <h4 dangerouslySetInnerHTML={{__html: details.instructions}}></h4>
+            <h1 dangerouslySetInnerHTML={{__html: details.summary}}></h1>
+            <h1 dangerouslySetInnerHTML={{__html: details.instructions}}></h1>
           </div>
         )}
 
@@ -47,36 +47,57 @@ function Recipe() {
 }
 
 const DetailWarpper = styled.div`
-  margin-top: 10rem;
-  margin-bottom: 5rem;
+  margin-top: 5rem;  //10rem
+  margin-bottom: 2.5rem;   //5rem
   display: flex;
+
   .active{
     background: linear-gradient(35deg, #494949, #313131);
     color: white;
   }
-  h2 {
-    margin-bottom: 2rem;
+
+  h1 {
+  font-size: 0.9rem;    
+  color: rgb(56, 56, 56);
+  line-height: 1.75rem;   
+  margin: 1rem 0rem; 
   }
+
   li {
-    font-size: 1.2rem;
-    line-height: 2.5rem;
+    font-size: 0.9rem;      //1.2rem;
+    line-height: 2rem;
   }
+
   ul {
     margin-top: 2rem;
   }
-`
+`;
+
+const Box = styled.div`
+  min-width: 20rem;
+  max-width: 20rem;
+
+  img {
+    width: 100%;
+  }
+
+  h2 {
+    margin-bottom: 1rem;    //2rem;
+    font-size: 1rem;
+  }
+`;
 
 const Button = styled.button`
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;   //1rem 2rem
   color: #313131;
   background: white;
   border: 2px solid black;
-  margin-right: 2rem;
+  margin-right: 2rem;  //1rem;
   font-weight: 600;
-`
+`;
 
 const Info = styled.div`
-  margin-left: 10rem;
+  margin-left: 5rem;  //10rem
 `
 
 export default Recipe
