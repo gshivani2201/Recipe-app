@@ -14,25 +14,14 @@ function Veggie() {
 
   const getVeggie = async () => {
 
-    //const check = localStorage.getItem('veggie');
-
-    // if (check) {
-    //   setVeggie(JSON.parse(check))
-    // } else {
-    //   const api = await fetch(
-    //     `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&diet=vegetarian`
-    //   );
-    //   const data = await api.json();
-    //   localStorage.setItem('veggie', JSON.stringify(data.recipes))
-    //   setVeggie(data.recipes);
-    //   console.log(data.recipes)
-    // }
-
     const check = localStorage.getItem('veggie');
-    console.log(check !== 'undefined')
+    // check = null if localStorage item don't exist
+    // check = undefined if localStorage item exist but have no data/is empty
 
-    if (check !== 'undefined') {
-      setVeggie(JSON.parse(check))
+    if (check !== null) {
+      if (check !== 'undefined') {
+        setVeggie(JSON.parse(check))
+      }     
     } else {
       const api = await fetch(
         `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&diet=vegetarian`
