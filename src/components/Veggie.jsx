@@ -15,8 +15,6 @@ function Veggie() {
   const getVeggie = async () => {
 
     const check = localStorage.getItem('veggie');
-    // check = null if localStorage item don't exist
-    // check = undefined if localStorage item exist but have no data/is empty
 
     if (check !== null) {
       if (check !== 'undefined') {
